@@ -1,0 +1,14 @@
+<button 
+class="btn btn-primary"
+(click)="getPassword()">Display Details</button>
+<p *ngIf="allowPassword; else removeIt">{{ password }}</p>
+<ng-template #removeIt>
+  <p>Removed</p>
+</ng-template>
+<p *ngFor="let password of passwords;let i=index"
+[ngStyle]="{backgroundColor: i>=4 ? 'blue' : 'transparent'}"
+[ngClass]="{fifth: i>=4}">{{password}}</p>
+
+
+
+
